@@ -35,8 +35,8 @@ predict_file = 'predict.npy'    # default file of spike counts for prediting dig
 
 random_neurons = []  # list of indices of neurons w/ weights reset to random
 
-show_labeling = False    # print labeling for each neuron if True
-#show_labeling = True     # print labeling for each neuron if True
+#show_labeling = False    # print labeling for each neuron if True
+show_labeling = True     # print labeling for each neuron if True
 
 show_prediction = False  # print prediction for each image if True
 #show_prediction = True   # print prediction for each image if True

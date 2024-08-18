@@ -5,6 +5,7 @@ activity/14x14
 activity/14x14x2
 activity/28x28
 activity/28x28x2
+activity*.tar.xz
 learned/14x14
 learned/14x14x2
 learned/28x28
@@ -14,10 +15,12 @@ random/14x14
 random/14x14x2
 random/28x28
 random/28x28x2
+random*.tar.xz
 weights/14x14
 weights/14x14x2
 weights/28x28
 weights/28x28x2
+weights*.tar.xz
 weights-fig/14x14
 weights-fig/14x14x2
 weights-fig/28x28

@@ -57,8 +57,7 @@ data_path = './'      # path to all files and directories
 
 image_file = 'testing.pickle'  # default input images (MNIST test images)
 
-#n_images = 1000       # default number of images to run model on
-n_images = 10         # number of images to run model on
+n_images = 1000       # default number of images to run model on
 
 skip = 0              # number of images to skip over before running model
 

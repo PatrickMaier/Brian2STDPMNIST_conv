@@ -61,8 +61,7 @@ data_path = './'      # path to all files and directories
 
 image_file = 'training.pickle'  # default input images (MNIST train images)
 
-#n_images = 6000       # default number of images to train model on
-n_images = 10         # number of images to run model on
+n_images = 6000       # default number of images to train model on
 
 skip = 0              # number of images to skip over before training model
 
@@ -73,8 +72,7 @@ pretrained = False    # start w/ pretrained weights and thetas if True
 show_weights = False  # visualise input weights if True; requires matplotlib
 #show_weights = True   # visualise input weights if True; requires matplotlib
 
-#save_interval = 1000  # default interval for saving learned parameters
-save_interval = 200   # interval for saving learned parameters
+save_interval = 1000  # default interval for saving learned parameters
 
 visual_interval = 20  # default interval for saving a visualisation of weights
 
