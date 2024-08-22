@@ -116,7 +116,7 @@ In order to do prediction, the trained model is run again, on test images, produ
 
 ```
 python MNIST_run_model.py $NETWORK testing.pickle 1000
-python MNIST_eval_runs.py labeling=$NETWORK/result_training.pickle_6000_[].npy predict=$NETWORK/result_testing.pickle_1000_[].npy
+python MNIST_eval_runs.py $NETWORK labeling=result_training.pickle_6000_[].npy predict=result_testing.pickle_1000_[].npy
 ```
 
 The MNIST_eval_runs.py script will print the labeling (i.e. the probability distribution) of each output neuron, the prediction confusion matrix, and the overall predication accuracy. (Probability distributions for each individual prediction can also be printed, by setting global variable show_prediction in MNIST_eval_runs.py accordingly.)
@@ -130,7 +130,7 @@ In order to test robustness of the network when exposed to data that definitely 
 
 ```
 python MNIST_run_model.py $NETWORK cifar.pickle 1000
-python MNIST_eval_runs.py labeling=$NETWORK/result_training.pickle_6000_[].npy predict=$NETWORK/result_cifar.pickle_1000_[].npy
+python MNIST_eval_runs.py $NETWORK labeling=result_training.pickle_6000_[].npy predict=result_cifar.pickle_1000_[].npy
 ```
 
 The MNIST_eval_runs.py script will print the labeling, the confusion matrix and the overall accuracy. Since all 1000 images are non-digits, any classification shown by the confusion matrix is a misclassification. That is, only images that aren't classified (because no neuron spiked) are correctly recognised as non-digits.
@@ -143,7 +143,7 @@ The models allow resetting of neurons prior to labeling and testing. In [1], we 
 ```
 python MNIST_run_model.py $NETWORK training.pickle 6000 [0,1,2,3,4,5,6,7,8,9]
 python MNIST_run_model.py $NETWORK testing.pickle 1000 [0,1,2,3,4,5,6,7,8,9]
-python MNIST_eval_runs.py labeling=$NETWORK/result_training.pickle_6000_[0,1,2,3,4,5,6,7,8,9].npy predict=$NETWORK/result_testing.pickle_1000_[0,1,2,3,4,5,6,7,8,9].npy [0,1,2,3,4,5,6,7,8,9]
+python MNIST_eval_runs.py $NETWORK labeling=result_training.pickle_6000_[0,1,2,3,4,5,6,7,8,9].npy predict=result_testing.pickle_1000_[0,1,2,3,4,5,6,7,8,9].npy [0,1,2,3,4,5,6,7,8,9]
 ```
 
 It is important that the list of reset neurons is the same for the three commands, and that the list is passed as argument without spaces to the MNIST_run_model.py and MNIST_eval_runs.py scripts.
@@ -171,7 +171,7 @@ python MNIST_run_model.py 14x14x2 training.pickle -12000 6000
 # prediction run
 python MNIST_run_model.py 14x14x2 testing.pickle -4000 1000      
 # prediction evaluation
-python MNIST_eval_runs.py labeling=14x14x2/result_training.pickle_-12000_6000_[].npy predict=14x14x2/result_testing.pickle_-4000_1000_[].npy
+python MNIST_eval_runs.py 14x14x2 labeling=result_training.pickle_-12000_6000_[].npy predict=result_testing.pickle_-4000_1000_[].npy
 ```
 
 
@@ -185,7 +185,7 @@ python MNIST_run_model.py 14x14x2 training.pickle -12000 6000 [8,14,21,22,44,46,
 # prediction run (resetting same 10 neurons)
 python MNIST_run_model.py 14x14x2 cifar.pickle 1000 [8,14,21,22,44,46,47,56,62,72]
 # prediction evaluation (resetting same 10 neurons)
-python MNIST_eval_runs.py labeling=14x14x2/result_training.pickle_-12000_6000_[8,14,21,22,44,46,47,56,62,72].npy predict=14x14x2/result_cifar.pickle_1000_[8,14,21,22,44,46,47,56,62,72].npy [8,14,21,22,44,46,47,56,62,72]
+python MNIST_eval_runs.py 14x14x2 labeling=result_training.pickle_-12000_6000_[8,14,21,22,44,46,47,56,62,72].npy predict=result_cifar.pickle_1000_[8,14,21,22,44,46,47,56,62,72].npy [8,14,21,22,44,46,47,56,62,72]
 ```
 
 
